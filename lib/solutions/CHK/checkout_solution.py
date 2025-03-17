@@ -1,30 +1,11 @@
-# noinspection PyUnusedLocal
-# skus = unicode string
 def checkout(skus):
-
     if not isinstance(skus, str):
         return -1
     
     # to keep track of the prices of each SKU
-    prices = {
-        'A': 50,
-        'B': 30,
-        'C': 20,
-        'D': 15,
-        'E': 40,
-        'F': 10
-    }
-
+    prices = { 'A': 50, 'B': 30,'C': 20, 'D': 15,'E': 40,'F': 10 }
     # hold number of occurances for each product
-    counts = {
-        'A': 0,
-        'B': 0,
-        'C': 0,
-        'D': 0,
-        'E': 0,
-        'F': 0
-    }
-
+    counts = { 'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0, 'F': 0 }
     # total cost
     total = 0
 
@@ -65,6 +46,4 @@ def checkout(skus):
 
     dCount = counts['D']
     total += dCount * prices['D']
-
-
     return total
