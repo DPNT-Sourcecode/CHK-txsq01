@@ -44,7 +44,13 @@ def checkout(skus):
     total += (aCount//3) * 130
     total += (aCount % 3) * prices['A']
 
+    eCount = counts['E']
+    total += (eCount//2) * 80
+    total += eCount * prices['E']
+
     bCount = counts['B']
+    freeB = eCount//2
+    bCount -= min(freeB, bCount)
     total += (bCount//2) * 45
     total += (bCount % 2) * prices['B']
 
@@ -54,8 +60,6 @@ def checkout(skus):
     dCount = counts['D']
     total += dCount * prices['D']
 
-    eCount = counts['E']
-    total += (eCount//2) * 50
-    total += eCount * prices['E']
+
 
     return total
