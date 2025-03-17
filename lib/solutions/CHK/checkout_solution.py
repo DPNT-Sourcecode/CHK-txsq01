@@ -60,7 +60,7 @@ def checkout(skus):
     counts['H'] = 0
 
     kCount = counts['K']
-    total += (kCount //2)  * 150
+    total += (kCount //2)  * 120
     total += (kCount%2) * prices['K']
     counts['K'] = 0
 
@@ -101,11 +101,13 @@ def checkout(skus):
     total += (vCount % 2) * prices['V']
     counts['V'] = 0
 
+    groupItems = ['S', 'T', 'X', 'Y', 'Z']
+    groupCounts = {item: counts[item] for item in groupItems}
+    totalGroupCount = sum(groupCounts.values())
+
+    groupDiscount = totalGroupCount//5
+
     for char in counts:
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
-
-
-
-
