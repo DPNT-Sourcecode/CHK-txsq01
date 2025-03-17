@@ -32,22 +32,38 @@ def checkout(skus):
     #then check for 3A deal
     total += (aCount//3) * 130
     total += (aCount % 3) * prices['A']
+    counts['A'] = 0
 
     eCount = counts['E']
     total += (eCount//2) * 80
     total += (eCount % 2) * prices['E']
+    counts['E'] = 0
 
     bCount = counts['B']
     freeB = eCount//2
     bCount -= min(freeB, bCount)
     total += (bCount//2) * 45
     total += (bCount % 2) * prices['B']
+    counts['B'] = 0
 
     fCount = counts['F']
     total += (fCount //3)  * (2 * prices['F'])
     total += (fCount%3) * prices['F']
+    counts['F'] = 0
+
+    total += (hCount//10) * 100
+    hCount = hCount%10
+    #then check for 3A deal
+    total += (hCount//5) * 45
+    total += (hCount % 5) * prices['H']
+    counts['H'] = 0
+
+    kCount = counts['K']
+    total += (kCount //3)  * 
+    total += (kCount%3) * prices['K']
+    counts['F'] = 0
 
     for char in skus:
         if counts[char] > 0:
-            total += prices[c]
+            total += prices[char] * counts[char]
     return total
