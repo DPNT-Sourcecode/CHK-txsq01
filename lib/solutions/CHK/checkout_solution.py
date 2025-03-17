@@ -39,7 +39,7 @@ def checkout(skus):
 
     fCount = counts['F']
     if fCount >= 3: 
-        total += (fCount // 2) * prices['F']
+        discountedF = 
     total += (fCount % 2) * prices['F']
 
     cCount = counts['C']
@@ -48,4 +48,5 @@ def checkout(skus):
     dCount = counts['D']
     total += dCount * prices['D']
     return total
+
 
