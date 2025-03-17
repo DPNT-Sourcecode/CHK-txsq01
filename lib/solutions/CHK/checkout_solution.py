@@ -62,7 +62,7 @@ def checkout(skus):
     kCount = counts['K']
     total += (kCount //2)  * 150
     total += (kCount%2) * prices['K']
-    counts['F'] = 0
+    counts['K'] = 0
 
     nCount = counts['N']
     freeM = nCount//3
@@ -100,3 +100,4 @@ def checkout(skus):
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
+
