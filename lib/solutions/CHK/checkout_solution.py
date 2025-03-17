@@ -106,7 +106,7 @@ def checkout(skus):
     totalGroupCount = sum(groupCounts.values())
 
     groupDiscount = totalGroupCount//3
-    total =+ groupDiscount * 45
+    total += groupDiscount * 45
 
     remainingItems = totalGroupCount % 3
     itemsRemoved = totalGroupCount - remainingItems
@@ -126,4 +126,5 @@ def checkout(skus):
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
+
 
