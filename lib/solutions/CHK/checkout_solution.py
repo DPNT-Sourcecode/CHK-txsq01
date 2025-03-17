@@ -90,16 +90,13 @@ def checkout(skus):
 
     vCount = counts['V']
     total += (vCount//3) * 130
-    vCount = vCount%10
+    vCount = vCount%3
     #then check for 3A deal
-    total += (hCount//5) * 45
-    total += (hCount % 5) * prices['H']
-    counts['H'] = 0
+    total += (vCount//2) * 90
+    total += (vCount % 2) * prices['V']
+    counts['V'] = 0
 
     for char in skus:
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
-
-
-
