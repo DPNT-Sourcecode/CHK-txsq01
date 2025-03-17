@@ -46,7 +46,7 @@ def checkout(skus):
 
     eCount = counts['E']
     total += (eCount//2) * 80
-    total += eCount * prices['E']
+    total += (eCount % 2) * prices['E']
 
     bCount = counts['B']
     freeB = eCount//2
@@ -63,3 +63,4 @@ def checkout(skus):
 
 
     return total
+
