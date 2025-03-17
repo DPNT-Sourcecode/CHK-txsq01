@@ -47,8 +47,3 @@ def checkout(skus):
     dCount = counts['D']
     total += dCount * prices['D']
     return total
-
-
-
-
-
