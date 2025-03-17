@@ -101,7 +101,7 @@ def checkout(skus):
     total += (vCount % 2) * prices['V']
     counts['V'] = 0
 
-    for char in skus:
+    for char in counts:
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
