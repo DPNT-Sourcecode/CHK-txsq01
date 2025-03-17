@@ -52,7 +52,7 @@ def checkout(skus):
     counts['F'] = 0
 
     hCount = counts['H']
-    total += (hCount//10) * 100
+    total += (hCount//10) * 80
     hCount = hCount%10
     #then check for 3A deal
     total += (hCount//5) * 45
@@ -103,3 +103,4 @@ def checkout(skus):
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
+
