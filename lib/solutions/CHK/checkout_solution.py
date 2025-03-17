@@ -36,8 +36,14 @@ def checkout(skus):
 
     # work out the total cost for the occurances
     aCount = counts['A']
+
+    # first we will check for the 5A deal
+    total += (aCount//5) * 200
+    aCount = aCount%5
+    #then check for 3A deal
     total += (aCount//3) * 130
     total += (aCount % 3) * prices['A']
+
     bCount = counts['B']
     total += (bCount//2) * 45
     total += (bCount % 2) * prices['B']
