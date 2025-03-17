@@ -101,5 +101,3 @@ def checkout(skus):
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
-
-
