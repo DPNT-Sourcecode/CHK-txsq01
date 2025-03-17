@@ -113,9 +113,17 @@ def checkout(skus):
     sortedItems = sorted(groupItems, key=lambda x: prices[x], reverse=True)
 
     for item in sortedItems:
-        if itemsRemoved 
+        if itemsRemoved > 0:
+            itemsUsed = min(groupCounts[item], itemsRemoved)
+            groupCounts[item] -= itemsUsed
+            itemsRemoved -= itemsUsed
+
+    for item in groupItems:
+        total += groupCounts[item] * prices[item]
+        counts[item] = 0
 
     for char in counts:
         if counts[char] > 0:
             total += prices[char] * counts[char]
     return total
+
