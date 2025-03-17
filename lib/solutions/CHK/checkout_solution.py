@@ -10,7 +10,8 @@ def checkout(skus):
         'A': 50,
         'B': 30,
         'C': 20,
-        'D': 15
+        'D': 15,
+        'E': 40
     }
 
     # hold number of occurances for each product
@@ -18,7 +19,8 @@ def checkout(skus):
         'A': 0,
         'B': 0,
         'C': 0,
-        'D': 0
+        'D': 0,
+        'E': 0
     }
 
     # total cost
@@ -42,6 +44,9 @@ def checkout(skus):
 
     cCount = counts['C']
     total += cCount * prices['C']
+
+    dCount = counts['D']
+    total += dCount * prices['D']
 
     dCount = counts['D']
     total += dCount * prices['D']
