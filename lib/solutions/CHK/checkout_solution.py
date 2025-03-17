@@ -105,7 +105,15 @@ def checkout(skus):
     groupCounts = {item: counts[item] for item in groupItems}
     totalGroupCount = sum(groupCounts.values())
 
-    groupDiscount = totalGroupCount//5
+    groupDiscount = totalGroupCount//3
+    total =+ groupDiscount * 45
+
+    remainingItems = totalGroupCount % 3
+    itemsRemoved = totalGroupCount - remainingItems
+    sortedItems = sorted(groupItems, key=lambda x: prices[x], reverse=True)
+
+    for item in sortedItems:
+        if itemsRemoved 
 
     for char in counts:
         if counts[char] > 0:
