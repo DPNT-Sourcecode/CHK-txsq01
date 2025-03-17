@@ -29,13 +29,13 @@ def checkout(skus):
         # if the char is not from the valid skus, return 1
         if char not in prices:
             return -1
-        # otherwise 
+        # otherwise increment the occurances of the product
         counts[char] += 1
 
+    # work out the total cost for the occurances
     aCount = counts['A']
     total += (aCount//3) * 130
     total += (aCount % 3) * prices['A']
-
     bCount = counts['B']
     total += (bCount//2) * 45
     total += (bCount % 2) * prices['B']
@@ -45,5 +45,7 @@ def checkout(skus):
 
     dCount = counts['D']
     total += dCount * prices['D']
+
+    return total
 
 
