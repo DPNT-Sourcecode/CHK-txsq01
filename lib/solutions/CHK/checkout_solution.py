@@ -54,7 +54,8 @@ def checkout(skus):
     dCount = counts['D']
     total += dCount * prices['D']
 
-    dCount = counts['D']
-    total += dCount * prices['D']
+    eCount = counts['E']
+    total += (eCount//2) * 50
+    total += eCount * prices['E']
 
     return total
